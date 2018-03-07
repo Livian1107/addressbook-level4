@@ -149,8 +149,28 @@ public class AddressBook implements ReadOnlyAddressBook {
 
     //// tag-level operations
 
+    /**
+     * Adds a tag to the UniqueTagList.
+     * Also checks the new tag exist in UniqueTagList or not
+     *
+     * @throws UniqueTagList.DuplicateTagException if an equivalent tag already exists.
+     */
     public void addTag(Tag t) throws UniqueTagList.DuplicateTagException {
         tags.add(t);
+    }
+
+    /**
+     * Removes a tag from the UniqueTagList.
+     * Also checks the tag exist in UniqueTagList or not
+     *
+     * @throws UniqueTagList.NotExistentTagException if an equivalent tag already exists.
+     */
+    public void removeTag(Tag t) throws UniqueTagList.NotExistentTagException {
+        try {
+            tags.remove(t);
+        } catch (UniqueTagList.NotExistentTagException e) {
+            e.printStackTrace();
+        }
     }
 
     //// util methods
