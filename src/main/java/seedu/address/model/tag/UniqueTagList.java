@@ -102,6 +102,8 @@ public class UniqueTagList implements Iterable<Tag> {
         requireNonNull(toRemove);
         if (contains(toRemove)) {
             internalList.remove(toRemove);
+        } else{
+            throw new NotExistentTagException();
         }
     }
 
