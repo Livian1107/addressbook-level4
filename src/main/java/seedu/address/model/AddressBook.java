@@ -159,6 +159,7 @@ public class AddressBook implements ReadOnlyAddressBook {
         tags.add(t);
     }
 
+
     /**
      * Removes a tag from the UniqueTagList.
      * Also checks the tag exist in UniqueTagList or not
@@ -166,11 +167,7 @@ public class AddressBook implements ReadOnlyAddressBook {
      * @throws UniqueTagList.NotExistentTagException if an equivalent tag already exists.
      */
     public void removeTag(Tag t) throws UniqueTagList.NotExistentTagException {
-        try {
-            tags.remove(t);
-        } catch (UniqueTagList.NotExistentTagException e) {
-            e.printStackTrace();
-        }
+        tags.remove(t);
     }
 
     //// util methods

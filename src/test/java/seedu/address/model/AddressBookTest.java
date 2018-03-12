@@ -18,6 +18,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import seedu.address.model.person.Person;
 import seedu.address.model.tag.Tag;
+import seedu.address.model.tag.UniqueTagList;
 
 public class AddressBookTest {
 
@@ -66,6 +67,12 @@ public class AddressBookTest {
     public void getTagList_modifyList_throwsUnsupportedOperationException() {
         thrown.expect(UnsupportedOperationException.class);
         addressBook.getTagList().remove(0);
+    }
+
+    @Test
+    public void removeTag() throws UniqueTagList.NotExistentTagException {
+        thrown.expect(NullPointerException.class);
+        addressBook.removeTag(null);
     }
 
     /**
