@@ -36,5 +36,4 @@ public class SortCommandTest {
     public void execute_listIsNotFiltered_showsSameList() {
         assertCommandSuccess(sortCommand, model, sortCommand.MESSAGE_SUCCESS, expectedModel);
     }
-
 }
