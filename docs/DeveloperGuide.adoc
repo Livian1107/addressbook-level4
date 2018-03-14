@@ -853,14 +853,33 @@ _{More to be added}_
 (For all use cases below, the *System* is the `AddressBook` and the *Actor* is the `user`, unless specified otherwise)
 
 [discrete]
+=== Use case: View contents of a specific week
+
+*MSS*
+
+1.  User requests to view a specific week
+2.  AddressBook shows content of the specified week
++
+Use case ends.
+
+*Extensions*
+
+* 1a. Specified week does not exist.
++
+[none]
+** 1a1. AddressBook shows an error message.
++
+Use case ends.
+
+[discrete]
 === Use case: Delete person
 
 *MSS*
 
 1.  User requests to list persons
-2.  ProgressChecker shows a list of persons
+2.  AddressBook shows a list of persons
 3.  User requests to delete a specific person in the list
-4.  ProgressChecker deletes the person
+4.  AddressBook deletes the person
 +
 Use case ends.
 
@@ -874,7 +893,7 @@ Use case ends.
 * 3a. The given index is invalid.
 +
 [none]
-** 3a1. ProgressChecker shows an error message.
+** 3a1. AddressBook shows an error message.
 +
 Use case resumes at step 2.
 
@@ -884,9 +903,9 @@ Use case resumes at step 2.
 *MSS*
 
 1.  User requests to view tasks in a specific week
-2.  ProgressChecker shows tasks in the specified week
+2.  AddressBook shows tasks in the specified week
 3.  User requests to add a new task in a specific week
-4.  ProgressChecker adds a new task to the existing list
+4.  AddressBook adds a new task to the existing list
 +
 Use case ends.
 
@@ -895,7 +914,7 @@ Use case ends.
 * 1a. Specified week does not exist.
 +
 [none]
-** 1a1. ProgressChecker shows an error message.
+** 1a1. AddressBook shows an error message.
 +
 Use case resumes at step 2.
 
@@ -905,9 +924,9 @@ Use case resumes at step 2.
 *MSS*
 
 1.  User requests to view tasks in a specific week
-2.  ProgressChecker shows tasks in the specified week
+2.  AddressBook shows tasks in the specified week
 3.  User requests to complete a task in a specific week
-4.  ProgressChecker marks specified task as complete
+4.  AddressBook marks specified task as complete
 +
 Use case ends.
 
@@ -916,10 +935,20 @@ Use case ends.
 * 1a. Specified week does not exist.
 +
 [none]
-** 1a1. ProgressChecker shows an error message.
+** 1a1. AddressBook shows an error message.
 +
 Use case resumes at step 2.
 
+[discrete]
+=== Use case: find person
+
+*MSS*
+
+1.  User types find
+2.  ProgressCheck automatically shows the list dynamically without the user needing to press enter key
+3.  User need not need to type the whole name, substrings will generate results
+4.  ProgressCheck displays the necessary results
+=======
 [none]
 * 2a. The tasks list is empty.
 +
@@ -928,7 +957,7 @@ Use case resumes at step 2.
 * 3a. The specified task does not exist
 +
 [none]
-** 3a1. ProgressChecker shows an error message.
+** 3a1. AddressBook shows an error message.
 +
 Use case ends.
 
@@ -938,18 +967,31 @@ Use case ends.
 *MSS*
 
 1.  User requests to view a specific week
-2.  ProgressChecker shows content of the specified week
+2.  AddressBook shows content of the specified week
 3.  User requests to key in and save an answer to a question
-4.  ProgressChecker takes in input and saves
+4.  AddressBook takes in input and saves
 +
 Use case ends.
 
 *Extensions*
 
+
+[none]
+* 2a. The list is empty.
++
+Use case ends.
+
+* 3a. The given substring doesn't exist in any name
++
+[none]
+** 3a1. AddressBook shows an error message.
++
+Use case resumes at step 2.
+=======
 * 1a. Specified week does not exist.
 +
 [none]
-** 1a1. ProgressChecker shows an error message.
+** 1a1. AddressBook shows an error message.
 +
 Use case resumes at step 2.
 
@@ -960,7 +1002,7 @@ Use case ends.
 
 * 3a. The question index does not exist.
 [none]
-** 3a1. ProgressChecker shows an error message.
+** 3a1. AddressBook shows an error message.
 +
 Use case ends.
 
@@ -970,9 +1012,9 @@ Use case ends.
 *MSS*
 
 1.  User requests to view their profile
-2.  ProgressChecker shows the profile of the user
+2.  AddressBook shows the profile of the user
 3.  User requests to upload a new photo to the profile
-4.  ProgressChecker adds a new photo to the profile of user
+4.  AddressBook adds a new photo to the profile of user
 5.  Profile displays the new photo
 +
 Use case ends.
@@ -982,7 +1024,7 @@ Use case ends.
 * 1a. Picture intented to add cannot be found.
 +
 [none]
-** 1a1. ProgressChecker shows an error message.
+** 1a1. AddressBook shows an error message.
 +
 Use case resumes at step 2.
 
