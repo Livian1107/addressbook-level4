@@ -61,7 +61,7 @@
           </VBox>
             <ImageView fitHeight="84.0" fitWidth="92.0" pickOnBounds="true" translateY="10.0">
                <image>
-                  <Image url="@../../../../../../Desktop/google2.0.0.jpg" />
+                  <Image url="@/images/profile_photo.jpg" />
                </image>
                <HBox.margin>
                   <Insets />
