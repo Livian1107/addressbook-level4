@@ -259,7 +259,7 @@ The `redo` command fails as there are no `undo` commands executed previously.
 
 === Refreshing the content : `refresh OR rf` `[coming in v2.0]`
 
-Refreshes the program to update its content.
+Refreshes the program to update its content. +
 Format: `refresh`
 
 Examples:
@@ -298,7 +298,7 @@ Example：
 
 === Toggling theme : `theme OR t` `[coming in v2.0]`
 
-Toggle between a light and dark theme.
+Toggle between a light and dark theme. +
 Format: `theme OR t`
 
 Examples:
