@@ -13,7 +13,7 @@ ifdef::env-github[]
 endif::[]
 :repoURL: https://github.com/CS2103JAN2018-T09-B3/main
 
-By: `Team T09-B3`      Since: `Jun 2016`      Licence: `MIT`
+By: `Team T09-B3`      Since: `Feb 2018`      Licence: `MIT`
 
 == Introduction
 
@@ -63,12 +63,17 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 
 Format: `help OR h`
 
+Examples:
+
+* `help`
+* `h`
+
 === Adding a teammate: `add OR a`
 
 Adds a teammate to the ProgressChecker +
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR y/YEAR [t/TAG]...` +
         `OR` +
-       `a n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR y/YEAR [t/TAG]...`
+        `a n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR y/YEAR [t/TAG]...`
 
 [TIP]
 A teammate can have any number of tags (including 0)
@@ -85,15 +90,25 @@ Examples:
 Shows a list of all teammates in the ProgressChecker. +
 Format: `list OR l`
 
+Examples:
+
+* `list`
+* `l`
+
 === Sorting all teammates : `sort`
 
 Sorts all teammates in the ProgressChecker with their names in alphabetical order. +
 Format: `sort`
 
+Example：
+
+* `sort`
+
 === Editing a teammate : `edit OR e`
 
 Edits an existing teammate in the ProgressChecker. +
 Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]...` +
+`OR` +
 `e INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]...`
 
 ****
