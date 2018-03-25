@@ -37,10 +37,10 @@ Do not disable them. If you have disabled them, go to `File` > `Settings` > `Plu
 . https://www.atlassian.com/git/tutorials/comparing-workflows#forking-workflow[Fork] this repo, and https://nus-cs2103-ay1718s2.github.io/website/book/gitAndGithub/init/index.html[clone] the fork to your computer
 . Open IntelliJ (if you are not in the welcome screen, click `File` > `Close Project` to close the existing project dialog first)
 . Set up the correct JDK version for Gradle
-.. Click `Configure` > `Project Defaults` > `Project Structure`
+... Click `Configure` > `Project Defaults` > `Project Structure`
 image:setup2.png[width="600"] +
-_step 3.a_
-.. Click `New...` and find the directory of the JDK
+_step 3.i_
+... Click `New...` and find the directory of the JDK
 . Click `Import Project`
 . Locate the `build.gradle` file and select it. Click `OK` +
 image:setup3.png[width="600"]  +
