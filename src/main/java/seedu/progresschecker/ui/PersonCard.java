@@ -63,6 +63,9 @@ public class PersonCard extends UiPart<Region> {
             label.getStyleClass().add(getTagColor(tag.tagName));
             tags.getChildren().add(label);
         });
+        if (person.getImage() != null) {
+            profile.setImage(Image.impl_fromPlatformImage(person.getImage()));
+        }
     }
 
     /**
@@ -82,13 +85,6 @@ public class PersonCard extends UiPart<Region> {
             sum += c;
         }
         return sum;
-    }
-
-    /**
-     * Updates the profile photo
-     */
-    public void updatePhoto() {
-        profile.setImage(Image.impl_fromPlatformImage(person.getImage()));
     }
 
     @Override
