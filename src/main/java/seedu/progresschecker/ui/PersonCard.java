@@ -87,6 +87,13 @@ public class PersonCard extends UiPart<Region> {
         return sum;
     }
 
+    /**
+     * Updates the profile photo
+     */
+    public void updatePhoto() {
+        profile.setImage(Image.impl_fromPlatformImage(person.getImage()));
+    }
+
     @Override
     public boolean equals(Object other) {
         // short circuit if same object
