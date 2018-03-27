@@ -1,8 +1,6 @@
 package seedu.progresschecker.commons.core;
 
-import javax.imageio.*;
 import java.awt.Image;
-import java.io.File;
 import java.util.Objects;
 import java.util.logging.Level;
 
