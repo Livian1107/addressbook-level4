@@ -6,9 +6,12 @@ import static seedu.progresschecker.logic.commands.CommandTestUtil.assertCommand
 import static seedu.progresschecker.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
 import static seedu.progresschecker.testutil.TypicalPersons.getTypicalProgressChecker;
 
+import java.io.IOException;
+
 import org.junit.Test;
 
 import seedu.progresschecker.commons.core.index.Index;
+import seedu.progresschecker.commons.exceptions.IllegalValueException;
 import seedu.progresschecker.logic.CommandHistory;
 import seedu.progresschecker.logic.UndoRedoStack;
 import seedu.progresschecker.model.Model;
@@ -38,7 +41,7 @@ public class UploadCommandTest {
     }
 
     @Test
-    public void execute_noFieldSpecifiedUnfilteredList_success() {
+    public void execute_noFieldSpecifiedUnfilteredList_success() throws IOException, IllegalValueException {
         UploadCommand uploadCommand = prepareCommand(INDEX_FIRST_PERSON, INVALID_PATH_DESC);
         Person editedPerson = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
 
@@ -52,7 +55,7 @@ public class UploadCommandTest {
     /**
      * Returns an {@code UploadCommand} with parameters {@code index} and {@code path}
      */
-    private UploadCommand prepareCommand(Index index, String path) {
+    private UploadCommand prepareCommand(Index index, String path) throws IOException, IllegalValueException {
         UploadCommand uploadCommand = new UploadCommand(index, path);
         uploadCommand.setData(model, new CommandHistory(), new UndoRedoStack());
         return uploadCommand;
