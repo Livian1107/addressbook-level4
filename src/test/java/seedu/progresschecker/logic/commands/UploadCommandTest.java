@@ -12,7 +12,6 @@ public class UploadCommandTest {
 
         // valid photo path
         assertTrue(UploadCommand.isValidLocalPath("C:\\Users\\Livian\\desktop\\1.png"));
-        assertTrue(UploadCommand.isValidLocalPath("D:\\2.png"));
 
         // empty path
         assertFalse(UploadCommand.isValidLocalPath("")); // empty string
