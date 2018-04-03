@@ -41,7 +41,7 @@ public class UploadCommandTest {
     }
 
     @Test
-    public void execute_noFieldSpecifiedUnfilteredList_success() throws IOException, IllegalValueException {
+    public void execute_noFieldSpecifiedUnfilteredList_success() {
         UploadCommand uploadCommand = prepareCommand(INDEX_FIRST_PERSON, INVALID_PATH_DESC);
         Person editedPerson = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
 
@@ -55,8 +55,15 @@ public class UploadCommandTest {
     /**
      * Returns an {@code UploadCommand} with parameters {@code index} and {@code path}
      */
-    private UploadCommand prepareCommand(Index index, String path) throws IOException, IllegalValueException {
-        UploadCommand uploadCommand = new UploadCommand(index, path);
+    private UploadCommand prepareCommand(Index index, String path) {
+        UploadCommand uploadCommand = null;
+        try {
+            uploadCommand = new UploadCommand(index, path);
+        } catch (IllegalValueException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         uploadCommand.setData(model, new CommandHistory(), new UndoRedoStack());
         return uploadCommand;
     }
