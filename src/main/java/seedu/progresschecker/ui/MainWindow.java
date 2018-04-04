@@ -208,6 +208,7 @@ public class MainWindow extends UiPart<Region> {
         primaryStage.setScene(scene);
         show();
     }
+    //@@author
 
     void show() {
         primaryStage.show();
@@ -235,7 +236,7 @@ public class MainWindow extends UiPart<Region> {
         handleHelp();
     }
 
-    //@@author Livain1107
+    //@@author Livian1107
     /**
      * Sets the icon of Main Window
      * @param icon with given path
@@ -251,4 +252,5 @@ public class MainWindow extends UiPart<Region> {
         primaryStage.setMinHeight(MIN_HEIGHT);
         primaryStage.setMinWidth(MIN_WIDTH);
     }
+    //@@author
 }

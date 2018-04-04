@@ -19,10 +19,12 @@
           <Menu mnemonicParsing="false" text="Help">
             <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp" text="Help" />
           </Menu>
+            <!-- @@author Livian1107 -->
             <Menu mnemonicParsing="false" text="Theme">
                 <MenuItem fx:id="nightTheme" mnemonicParsing="false" onAction="#handleNightTheme" text="NightTheme" />
                 <MenuItem fx:id="dayTheme" mnemonicParsing="false" onAction="#handleDayTheme" text="DayTheme" />
             </Menu>
+            <!-- @@author -->
         </MenuBar>
 
         <StackPane fx:id="commandBoxPlaceholder" styleClass="pane-with-border" VBox.vgrow="NEVER">
@@ -44,6 +46,7 @@
             </padding>
             <StackPane fx:id="personListPanelPlaceholder" VBox.vgrow="ALWAYS" />
           </VBox>
+            <!-- @@author Livian1107 -->
          <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
            <tabs>
              <Tab text="Profile" />
@@ -55,6 +58,7 @@
                </Tab>
            </tabs>
          </TabPane>
+            <!-- @@author -->
         </SplitPane>
           <StackPane fx:id="statusbarPlaceholder" VBox.vgrow="NEVER" />
 </VBox>
