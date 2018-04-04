@@ -186,6 +186,29 @@ public class MainWindow extends UiPart<Region> {
         helpWindow.show();
     }
 
+    //@@author: Livian1107
+    /**
+     * Switches to the Night Theme.
+     */
+    @FXML
+    public void handleNightTheme() {
+        Scene scene = primaryStage.getScene();
+        scene.getStylesheets().setAll("view/DarkTheme.css");
+        primaryStage.setScene(scene);
+        show();
+    }
+
+    /**
+     * Switches to the Day Theme.
+     */
+    @FXML
+    public void handleDayTheme() {
+        Scene scene = primaryStage.getScene();
+        scene.getStylesheets().setAll("view/DayTheme.css");
+        primaryStage.setScene(scene);
+        show();
+    }
+
     void show() {
         primaryStage.show();
     }
