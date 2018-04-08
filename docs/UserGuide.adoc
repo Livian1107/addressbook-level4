@@ -18,18 +18,28 @@ By: `Team T09-B3`      Since: `Feb 2018`      Licence: `MIT`
 
 == Introduction
 
+=== Aabout the App
+
 ProgressChecker is for *students* who *prefer to use a desktop app* to keep track of their learning progress throughout the certain module. (Current version is available for CS2103/T) +
 
-For the current version, students can add their team mates into the app. They can create a new task list through google task. By default, app will display all the link:DeveloperGuide.adoc#Learning-Outcomes[Learning Outcomes] for this week in the task list.
+For the current version, students can add their teammates into the app. They can create a new task list through google task. By default, app will display all the link:DeveloperGuide.adoc#Learning-Outcomes[Learning Outcomes] for this week in the task list. Students can use this task list to track their weekly homework and the progress of the project.
 
 More importantly, ProgressChecker is *optimized for students who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (GUI).
 If you can type fast, ProgressChecker can get your learning outcome tasks done faster than traditional GUI apps. +
 
 Interested? Jump to the <<Quick Start,Quick Start>> to get started. Enjoy!
 
+=== Icons Meaning
+
+[TIP]
+Tip
+
+[NOTE]
+Note
+
 == Quick Start
 
-Getting started with ProgressChecker is as easy as downloading and launching the software in a couple of clicks! Listed below are the important steps that you will need to follow to get started:
+Getting started with ProgressChecker is as easy as downloading and launching the software in a couple of clicks! Listed below are the important *steps* that you will need to follow to get started:
 
 .  Ensure you have Java version `1.8.0_60` or later installed in your Computer.
 +
@@ -51,7 +61,7 @@ The viewing of learning outcomes and exercises are not ready yet! Currently, onl
 .  Type the command in the command box and press kbd:[Enter] to execute it. +
 e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 .  Some example commands you can try:
-
++
 [TIP]
 You can type a command and press `Tab` to auto bring out all the command parameters.
 
