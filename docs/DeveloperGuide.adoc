@@ -1116,7 +1116,7 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 
 |`* * *` |user |search information in our module website based on keywords |navigate and reference the information I need quickly
 
-|`* * *` |user |view my to-do learning outcomes |know all the weekly deliverables and not miss them out
+|`* * *` |user |view my to-do <<learning outcomes,learning outcomes>> |know all the weekly deliverables and not miss them out
 
 |`* * *` |user |mark a to-do learning outcome as completed |focus on the tasks I have not done
 
@@ -1124,7 +1124,7 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 
 |`* * *` |user |know if my answer for an exercise is correct |learn from any mistakes I made
 
-|`* * *` |user |see the list of completed/incomplete learning outcomes of my teammates |help to remind my teammate of the task or know which task to offer help with if they are having difficulties
+|`* * *` |user |see the list of completed/incomplete <<learning outcomes,learning outcomes>> of my teammates |help to remind my teammate of the task or know which task to offer help with if they are having difficulties
 
 |`* * *` |user |list issues (tasks) on GitHub |easily inform my teammates of my upcoming plans even before I send any pull requests to the team's repository
 
@@ -1429,16 +1429,19 @@ Build automation is the process of automating the creation of a software build a
 Gradle is an open-source build automation system.
 
 [[GUI]] GUI::
-Graphical User Interface
+Graphical User Interface.
+
+[[Learning-Outcomes]] Learning Outcomes::
+Exercises that need to be done through github for module CS2103/T.
 
 [[mainstream-os]] Mainstream OS::
-Windows, Linux, Unix, OS-X
+Windows, Linux, Unix, OS-X.
 
 [[private-contact-detail]] Private contact detail::
-A contact detail that is not meant to be shared with others
+A contact detail that is not meant to be shared with others.
 
 [[sequence-diagram]] Sequence Diagram::
-A sequence diagram shows object interactions shown in time sequence.
+A <<sequence diagram,sequence diagram>> shows object interactions shown in time sequence.
 
 [appendix]
 == Instructions for Manual Testing
