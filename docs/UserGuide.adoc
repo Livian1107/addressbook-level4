@@ -108,7 +108,7 @@ Refer to <<Default,below>> for details of each command.
 * You can auto-complete any command by pressing tab key.
 * Words in `UPPER_CASE` are the parameters to be supplied by the user e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
 * Items in square brackets are optional e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
-* Items with `…`​ after them can be used multiple times including zero times e.g. `[t/TAG]...` can be used as `{nbsp}` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+* Items with `…` after them can be used multiple times including zero times e.g. `[t/TAG]...` can be used as `{nbsp}` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
 * Parameters can be in any order e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 ====
 
@@ -119,7 +119,7 @@ Refer to <<Default,below>> for details of each command.
 You may want to refer to the User Guide when you have a question. You can read it in a separate window. +
 *Format:* `help` OR `h`
 
-Examples:
+*Examples:*
 
 * `help`
 * `h`
@@ -354,8 +354,8 @@ otherwise the application will hang.
 
 *Examples:*
 
-* `viewtask`
-* `vt`
+* `-issue 1`
+* `cli 3`
 
 ==== Completing a task: `complete` OR `ct`
 
@@ -393,13 +393,14 @@ You can reset a task as incompleted when you want to work on it. +
 ****
 
 [TIP]
-The command requires Internet connection. You may be brought to a login page in your browser. Please do not close the tab without accepting/declining request,
-otherwise the application will hang.
+An issue has only 'title' field as compulsory. Rest are all optional. +
+An issue can have more than one assignees and labels.
 
 *Examples:*
 
-* `reset 3`
-* `rt 3`
+* `+issue ti/complete issue a/johndoe ms/v1.1 b/CS2103T is a software engineering module l/type.task l/CS2103T`
+* `+issue ti/TestIssue`
+* `ci ti/Issue with only body b/test body l/type.test`
 
 === Teammate
 
@@ -668,5 +669,5 @@ ri 1
 |
 
 |===
-{sp}+
+
 Back to the <<Introduction,TOP>>
