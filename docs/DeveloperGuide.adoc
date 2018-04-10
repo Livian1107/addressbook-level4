@@ -18,7 +18,7 @@ By: `Team T09-B3`      Since: `Feb 2018`      Licence: `MIT`
 
 ProgressChecker is for *students* who *prefer to use a desktop app* to keep track of their learning progress throughout the certain module. (Current version is available for CS2103/T) +
 
-For the current version, students can add their teammates into the app. They can create a new task list through google task. By default, app will display all the link:DeveloperGuide.adoc#Learning-Outcomes[Learning Outcomes] for this week in the task list. Students can use this task list to track their weekly homework and the progress of the project.
+For the current version, you can add your teammates details into ProgressChecker. You can also create a new task list through google task. By default, app will display all the link:DeveloperGuide.adoc#Learning-Outcomes[Learning Outcomes] for this week in the task list. Students can use this task list to track their weekly homework and the progress of the project.
 
 More importantly, ProgressChecker is *optimized for students who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (link:DeveloperGuide.adoc#GUI[GUI]).
 If you can type fast, ProgressChecker can get your learning outcome tasks done faster than traditional GUI apps. +
@@ -132,7 +132,7 @@ The `.pptx` files used to create diagrams in this document can be found in the l
 `Main` has only one class called link:{repoURL}/src/main/java/seedu/progresschecker/MainApp.java[`MainApp`]. It is responsible for: +
 
 * Initializing the components in the correct sequence, and connects them up with each other at app launch.
-* Shutting down the components and invokes cleanup method where necessary at shut down.
+* Shutting down the components and invokes cleanup method where necessary.
 
 <<Design-Commons,*`Commons`*>> represents a collection of classes used by multiple other components. Two of those classes play important roles at the architecture level.
 

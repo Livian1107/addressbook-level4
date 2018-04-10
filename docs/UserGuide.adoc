@@ -22,7 +22,7 @@ By: `Team T09-B3`      Since: `Feb 2018`      Licence: `MIT`
 
 ProgressChecker is for *students* who *prefer to use a desktop app* to keep track of their learning progress throughout the certain module. (Current version is available for CS2103/T) +
 
-For the current version, students can add their teammates into the app. They can create a new task list through google task. By default, app will display all the link:DeveloperGuide.adoc#Learning-Outcomes[Learning Outcomes] for this week in the task list. Students can use this task list to track their weekly homework and the progress of the project.
+For the current version, you can add your teammates details into ProgressChecker. You can also create a new task list through google task. By default, app will display all the link:DeveloperGuide.adoc#Learning-Outcomes[Learning Outcomes] for this week in the task list. Students can use this task list to track their weekly homework and the progress of the project.
 
 More importantly, ProgressChecker is *optimized for students who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (link:DeveloperGuide.adoc#GUI[GUI]).
 If you can type fast, ProgressChecker can get your learning outcome tasks done faster than traditional GUI apps. +
@@ -30,61 +30,61 @@ If you can type fast, ProgressChecker can get your learning outcome tasks done f
 Interested? Now you are ready to jump to the <<Quick Start,Quick Start>> to get started. Enjoy!
 
 === Icons Meaning
+You will be seeing these icons throughout the guide. Each icon display specific information.
 
 [TIP]
-Some tips that you may try when using the app
+This lightbulb icon means tips that you can try when using ProgressChecker.
 
 [NOTE]
-Some notes that you need to pay attention to when using the app
+This info icon means notes that you should pay attention to when using ProgressChecker.
 
 == Quick Start
 
 Getting started with ProgressChecker is as easy as downloading and launching the software in a couple of clicks! Listed below are the important *steps* that you will need to follow to get started:
 
-.  Ensure you have Java version `1.8.0_60` or later installed in your Computer.
+.  Please ensure that you have Java version `1.8.0_60` or later installed in your Computer.
 +
 [NOTE]
 Having any Java 8 version is not enough. +
 This app will not work with earlier versions of Java 8.
 +
-.  Download the latest `progresschecker.jar` link:{repoURL}/releases[here].
-.  Copy the file to the folder you want to use as the home folder for your ProgressChecker.
+.  You can download the latest `progresschecker.jar` link:{repoURL}/releases[here].
+.  Next, you can create a new folder on your Desktop and name it _ProgressChecker_. Then, place the downloaded progresschecker.jar file into the new folder you've just created. +
+Your jar file should now be residing in C:\Users\%UserProfile%\Desktop\ProgressChecker.
 +
 image::download3.png[width="790"]
 +
-. After you click to open the progresschecker.jar app, you can see the following files will be automatically generated into the home folder where you copy jar file to.
-+
-image::download2.png[width="790"]
-+
-.  Double-click the file to start the app. The GUI like below should appear in a few seconds. +
-Now, you are ready to start to explore ProgressChecker!
+.  You can double-click the file to launch the app. A GUI as shown below should appear in a few seconds.
 +
 image::Ui.png[width="790"]
 +
-[NOTE]
-====
-We have put some of week 11's exercises in the app. You can open the app and try it!
-====
+. You should also notice that the following files shown below will have been automatically generated in the same directory as where your progresschecker.jar file is in upon launch.
++
+image::download2.png[width="790"]
++
+Now, you are ready to start to explore ProgressChecker!
 
 [[Features]]
 == Features
 
-You may find that there are lots of new commands in ProgressChecker. However, you may also find that the app is easy to use, as long as you follow the instructions below. +
+ProgressChecker is filled with lots of functionalities that are easy to use. If you're new to using CLI, our next section will give you a quick start to end process of using CLI with ProgressChecker.
 
 The section below specifies all the commands in details with examples to help you be more familiar how to use our app and let you make the best out of ProgressChecker.
 
-=== Overview
+=== Using CLI with ProgressChecker
 
 Now you come to use the ProgressChecker. You can type the command in the command box and press kbd:[Enter] to execute it. Here are the features that you can try:
 
 [TIP]
 You can type a command and press `Tab` to auto bring out all the command parameters.
 
+*List of Example Commands*
+
 * *`help`* : you can open the help window in case you have any questions.
 
 * *`list`* : you can see all contacts will be listed on the left side of the window.
 
-* *`add n/John Doe p/98765432 e/johnd@example.com m/Computer Science y/2`* : you can add the contact indormation of your friend `John Doe` to the ProgressChecker. He is in his 2nd year majoring in computer engineering.
+* *`add n/John Doe p/98765432 e/johnd@example.com m/Computer Science y/2 g/johndoe`* : you can add the contact indormation of your friend `John Doe` to the ProgressChecker. He is in his 2nd year majoring in computer engineering. His username of the Github is johndoe.
 
 * *`+issue ti/TestIssue`* : you can create an issue on github in your team repo.
 
@@ -112,7 +112,7 @@ Refer to <<Default,below>> for details of each command.
 * Parameters can be in any order e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 ====
 
-=== Default
+=== General
 
 ==== Helping user with User Guide : `help` OR `h`
 
@@ -123,6 +123,25 @@ Examples:
 
 * `help`
 * `h`
+
+// tag::view[]
+==== Viewing a different tab : `view` OR `v`
+
+You can change the tab view to show either profiles, tasks, or exercises window. +
+*Format:* `view TYPE` OR `v TYPE`
+
+====
+*Notes:*
+
+* You can change the tab view to specified `TYPE`.
+* The type refers to the tab name.
+* The tab name must be `profile`, `task`, or `exercise`.
+====
+
+*Examples:*
+
+* `view exercise`
+// end::view[]
 
 ==== Toggling theme : `theme` OR `t`
 
@@ -228,25 +247,6 @@ You can exits the program when you are done with the work. +
 * `e`
 
 === Exercise
-
-// tag::view[]
-==== Viewing a different tab : `view` OR `v`
-
-You can change the tab view to show either profiles, tasks, or exercises window. +
-*Format:* `view TYPE` OR `v TYPE`
-
-====
-*Notes:*
-
-* You can change the tab view to specified `TYPE`.
-* The type refers to the tab name.
-* The tab name must be `profile`, `task`, or `exercise`.
-====
-
-*Examples:*
-
-* `view exercise`
-// end::view[]
 
 // tag::answer[]
 ==== Answering and saving an exercise : `answer` `[since v1.4r]`
@@ -406,26 +406,26 @@ otherwise the application will hang.
 ==== Adding a teammate: `add` OR `a`
 
 You can add the contact information of a new teammate to the ProgressChecker. +
-*Format:* `add n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR y/YEAR [t/TAG]...` +
+*Format:* `add n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR y/YEAR g/GITHUB_USERNAME [t/TAG]...` +
 OR +
-`a n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR y/YEAR [t/TAG]...`
+`a n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR y/YEAR g/GITHUB_USERNAME [t/TAG]...`
 
 [TIP]
 A teammate can have any number of tags (including 0)
 
 *Examples:*
 
-* `add n/John Doe p/98765432 e/johnd@example.com m/Computer Science y/2`
-* `a n/John Doe p/98765432 e/johnd@example.com m/Computer Science y/2`
-* `add n/Betsy Crowe t/friend e/betsycrowe@example.com m/Computer Engineering p/1234567 y/3 t/criminal`
-* `a n/Betsy Crowe t/friend e/betsycrowe@example.com m/Information Security y/2 p/1234567 t/criminal`
+* `add n/John Doe p/98765432 e/johnd@example.com m/Computer Science y/2 g/johndoe`
+* `a n/John Doe p/98765432 e/johnd@example.com m/Computer Science y/2 g/johndoe`
+* `add n/Betsy Crowe t/friend e/betsycrowe@example.com m/Computer Engineering p/1234567 y/3 g/betsycrowe t/criminal`
+* `a n/Betsy Crowe t/friend e/betsycrowe@example.com m/Information Security y/2 p/1234567 g/betsycrowe t/criminal`
 
 ==== Editing a teammate : `edit` OR `ed`
 
 You can edit the information of the certain existing teammate in the ProgressChecker. +
-*Format:* `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]...` +
+*Format:* `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [m/MAJOR] [y/YEAR] [g/GITHUB_USERNAME] [t/TAG]...` +
 OR +
-`ed INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]...`
+`ed INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [m/MAJOR] [y/YEAR] [g/GITHUB_USERNAME] [t/TAG]...`
 
 ====
 *Notes:*
