@@ -447,6 +447,7 @@ Upload can be undoable. The diagram below shows how the `EventsCenter` reacts to
 
 .Component Interactions for `uploadPhoto` Command
 image::SDforUploadPhoto.png[width="800"]
+
 {sp} +
 
 UploadCommand is implemented this way:
