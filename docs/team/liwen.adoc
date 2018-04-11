@@ -14,7 +14,7 @@ ProgressChecker is *a desktop application for CS2103/T students to have a centra
 
 * *Major enhancement*: added *the ability to upload profile photo*
 ** *What it does:* allows students to upload any photos as their own or teammates's profile photo.
-** *Justification:* this feature solves the issue that students may have teammates with the same name.Profile photo can help students to recognize each other better.
+** *Justification:* this feature solves the issue that students may have teammates with the same name. Profile photo can help students to recognize each other better.
 ** *Highlights:* This enhancement touches on all 4 components in the code base. It required an in-depth analysis of the existing architecture on how each components work with one another in order to implement it in an optimal way.
 ** *Credits:* The format and style of the codes are heavily inspired by the existing code, like `addCommand`.
 
