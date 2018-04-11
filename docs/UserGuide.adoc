@@ -59,11 +59,6 @@ image::download3.png[width="790"]
 image::Ui.png[width="790"]
 +
 . You should also notice that the following files shown below will have been automatically generated in the same directory as where your progresschecker.jar file is in upon launch.
-+
-.  Type the command in the command box and press kbd:[Enter] to execute it. +
-e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
-.  Some example commands you can try:
-+
 image::download2.png[width="790"]
 +
 Now, you are ready to start to explore ProgressChecker!
