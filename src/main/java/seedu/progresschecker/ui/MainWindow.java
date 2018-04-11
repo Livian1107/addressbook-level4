@@ -49,6 +49,7 @@ public class MainWindow extends UiPart<Region> {
     private BrowserPanel browserPanel;
     private Browser2Panel browser2Panel;
     private ExerciseListPanel exerciseListPanel;
+    private IssueListPanel issueListPanel;
     private PersonListPanel personListPanel;
     private ProfilePanel profilePanel;
     private Config config;
@@ -68,6 +69,9 @@ public class MainWindow extends UiPart<Region> {
 
     @FXML
     private StackPane profilePanelPlaceholder;
+
+    @FXML
+    private StackPane issuePanelPlaceholder;
 
     @FXML
     private MenuItem helpMenuItem;
@@ -92,6 +96,9 @@ public class MainWindow extends UiPart<Region> {
 
     @FXML
     private Tab exercisePlaceholder;
+
+    @FXML
+    private Tab issuePlaceholder;
 
 
     public MainWindow(Stage primaryStage, Config config, UserPrefs prefs, Logic logic) {
@@ -168,6 +175,9 @@ public class MainWindow extends UiPart<Region> {
 
         exerciseListPanel = new ExerciseListPanel(logic.getFilteredExerciseList());
         exerciseListPanelPlaceholder.getChildren().add(exerciseListPanel.getRoot());
+
+        issueListPanel = new IssueListPanel(logic.getFilteredIssueList());
+        issuePanelPlaceholder.getChildren().add(issueListPanel.getRoot());
 
         personListPanel = new PersonListPanel(logic.getFilteredPersonList());
         personListPanelPlaceholder.getChildren().add(personListPanel.getRoot());
@@ -302,8 +312,12 @@ public class MainWindow extends UiPart<Region> {
         case "exercise":
             selectionModel.select(exercisePlaceholder);
             break;
+        case "issues":
+            selectionModel.select(issuePlaceholder);
+            break;
         default:
             selectionModel.select(selectionModel.getSelectedItem());
         }
     }
+    //@@author
 }
