@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import seedu.progresschecker.commons.core.Config;
 import seedu.progresschecker.commons.core.GuiSettings;
 import seedu.progresschecker.commons.core.LogsCenter;
+import seedu.progresschecker.commons.events.ui.ChangeThemeEvent;
 import seedu.progresschecker.commons.events.ui.ExitAppRequestEvent;
 import seedu.progresschecker.commons.events.ui.ShowHelpRequestEvent;
 import seedu.progresschecker.commons.events.ui.TabLoadChangedEvent;
@@ -49,7 +50,9 @@ public class MainWindow extends UiPart<Region> {
     private BrowserPanel browserPanel;
     private Browser2Panel browser2Panel;
     private ExerciseListPanel exerciseListPanel;
+    private IssueListPanel issueListPanel;
     private PersonListPanel personListPanel;
+    private ProfilePanel profilePanel;
     private Config config;
     private UserPrefs prefs;
 
@@ -64,6 +67,12 @@ public class MainWindow extends UiPart<Region> {
 
     @FXML
     private StackPane exerciseListPanelPlaceholder;
+
+    @FXML
+    private StackPane profilePanelPlaceholder;
+
+    @FXML
+    private StackPane issuePanelPlaceholder;
 
     @FXML
     private MenuItem helpMenuItem;
@@ -88,6 +97,9 @@ public class MainWindow extends UiPart<Region> {
 
     @FXML
     private Tab exercisePlaceholder;
+
+    @FXML
+    private Tab issuePlaceholder;
 
 
     public MainWindow(Stage primaryStage, Config config, UserPrefs prefs, Logic logic) {
@@ -159,8 +171,14 @@ public class MainWindow extends UiPart<Region> {
         browser2Panel = new Browser2Panel();
         browser2Placeholder.getChildren().add(browser2Panel.getRoot());
 
+        profilePanel = new ProfilePanel();
+        profilePanelPlaceholder.getChildren().add(profilePanel.getRoot());
+
         exerciseListPanel = new ExerciseListPanel(logic.getFilteredExerciseList());
         exerciseListPanelPlaceholder.getChildren().add(exerciseListPanel.getRoot());
+
+        issueListPanel = new IssueListPanel(logic.getFilteredIssueList());
+        issuePanelPlaceholder.getChildren().add(issueListPanel.getRoot());
 
         personListPanel = new PersonListPanel(logic.getFilteredPersonList());
         personListPanelPlaceholder.getChildren().add(personListPanel.getRoot());
@@ -280,6 +298,22 @@ public class MainWindow extends UiPart<Region> {
         primaryStage.setMinWidth(MIN_WIDTH);
     }
 
+    //@@author Livian107
+    @Subscribe
+    private  void handleChangeThemeEvent(ChangeThemeEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        switch (event.getTheme()) {
+        case "day":
+            handleDayTheme();
+            break;
+        case "night":
+            handleNightTheme();
+            break;
+        default:
+            handleDayTheme();
+        }
+    }
+
     //@@author iNekox3
     @Subscribe
     private void handleTabLoadChangedEvent(TabLoadChangedEvent event) {
@@ -295,8 +329,12 @@ public class MainWindow extends UiPart<Region> {
         case "exercise":
             selectionModel.select(exercisePlaceholder);
             break;
+        case "issues":
+            selectionModel.select(issuePlaceholder);
+            break;
         default:
             selectionModel.select(selectionModel.getSelectedItem());
         }
     }
+    //@@author
 }
