@@ -13,8 +13,7 @@ import seedu.progresschecker.model.person.Person;
 public class PersonCard extends UiPart<Region> {
 
     private static final String FXML = "PersonListCard.fxml";
-    private static final String[] TAG_COLORS =
-        { "red", "orange", "yellow", "green", "blue", "purple" };
+
     /**
      * Note: Certain keywords such as "location" and "resources" are reserved keywords in JavaFX.
      * As a consequence, UI elements' variable names cannot be set to such keywords
