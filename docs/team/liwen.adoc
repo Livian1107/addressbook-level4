@@ -18,11 +18,11 @@ ProgressChecker is *a desktop application for CS2103/T students to have a centra
 ** *Highlights:* This enhancement touches on all 4 components in the code base. It required an in-depth analysis of the existing architecture on how each components work with one another in order to implement it in an optimal way.
 ** *Credits:* The format and style of the codes are heavily inspired by the existing code, like `addCommand`.
 
-* *Minor enhancement*: improve the UI from current version with another new theme
-
-* *Minor enhancement*: add a sort command to display teammates with their name in lexicological order
-
 * *Minor enhancement*: add a theme command to change the theme of ProgressChecker
+
+* *Extra feature*: improve the UI from current version with another new theme
+
+* *Extra feature*: add a sort command to display teammates with their name in lexicological order
 
 * *Code contributed*: [https://github.com/CS2103JAN2018-T09-B3/main/blob/master/collated/functional/Livian1107.md[Functional code]] [https://github.com/CS2103JAN2018-T09-B3/main/blob/master/collated/test/Livian1107.md[Test code]]
 
