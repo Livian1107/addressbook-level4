@@ -50,6 +50,7 @@ public class MainWindow extends UiPart<Region> {
     private Browser2Panel browser2Panel;
     private ExerciseListPanel exerciseListPanel;
     private PersonListPanel personListPanel;
+    private ProfilePanel profilePanel;
     private Config config;
     private UserPrefs prefs;
 
@@ -64,6 +65,9 @@ public class MainWindow extends UiPart<Region> {
 
     @FXML
     private StackPane exerciseListPanelPlaceholder;
+
+    @FXML
+    private StackPane profilePanelPlaceholder;
 
     @FXML
     private MenuItem helpMenuItem;
@@ -158,6 +162,9 @@ public class MainWindow extends UiPart<Region> {
 
         browser2Panel = new Browser2Panel();
         browser2Placeholder.getChildren().add(browser2Panel.getRoot());
+
+        profilePanel = new ProfilePanel();
+        profilePanelPlaceholder.getChildren().add(profilePanel.getRoot());
 
         exerciseListPanel = new ExerciseListPanel(logic.getFilteredExerciseList());
         exerciseListPanelPlaceholder.getChildren().add(exerciseListPanel.getRoot());
