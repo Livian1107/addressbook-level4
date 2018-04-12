@@ -1,8 +1,11 @@
 package seedu.progresschecker.logic.parser;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.progresschecker.logic.commands.ViewTaskListCommand.ALL_WEEK;
+import static seedu.progresschecker.logic.commands.ViewTaskListCommand.COMPULSORY;
 import static seedu.progresschecker.logic.commands.ViewTaskListCommand.MAX_TITLE_LENGTH;
 import static seedu.progresschecker.logic.commands.ViewTaskListCommand.MESSAGE_TITLE_CONSTRAINTS;
+import static seedu.progresschecker.logic.commands.ViewTaskListCommand.SUBMISSION;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -42,7 +45,12 @@ import seedu.progresschecker.model.tag.Tag;
 public class ParserUtil {
 
     public static final String MESSAGE_INVALID_INDEX = "Index is not a non-zero unsigned integer.";
+    public static final String MESSAGE_INVALID_INDEX_OR_FORMAT = "Wrong format or index is not a positive integer.";
+    public static final String MESSAGE_INVALID_TASK_FILTER = "Filter keyword is not an integer 1~13 "
+            + "or * or \"submission\" or \"sub\" or \"compulsory\" or \"com\".";
     public static final String MESSAGE_INVALID_TAB_TYPE = "Given type must be 'profile', 'task', or 'exercise'";
+    public static final String MESSAGE_INVALID_WEEK_NUMBER = "Given week number must be between the range 2 to 12"
+            + " (boundary numbers inclusive).";
     public static final String MESSAGE_INSUFFICIENT_PARTS = "Number of parts must be more than 1.";
 
     /**
@@ -72,15 +80,69 @@ public class ParserUtil {
         return Integer.parseInt(trimmedIndex);
     }
 
+    /**
+     * Parses {@code String} into an {@code int} and returns it. Leading and trailing whitespaces will be
+     * trimmed.
+     * @throws IllegalValueException if the specified week number is invalid (neither an integer ranging from 1 to 13
+     * nor an asterisk(*)).
+     */
+    public static int parseTaskWeek(String week) throws IllegalValueException {
+        String trimmedWeek = week.trim();
+        if (trimmedWeek.equals("*")) {
+            return ALL_WEEK;
+        } else if (trimmedWeek.equals("sub") || trimmedWeek.equals("submission")) {
+            return SUBMISSION;
+        } else if (trimmedWeek.equals("com") || trimmedWeek.equals("compulsory")) {
+            return COMPULSORY;
+        } else if (!StringUtil.isNonZeroUnsignedInteger(trimmedWeek)) {
+            throw new IllegalValueException(MESSAGE_INVALID_TASK_FILTER);
+        }
+        int intWeek = Integer.parseInt(trimmedWeek);
+        if (intWeek >= 1 && intWeek <= 13) {
+            return intWeek;
+        } else {
+            throw new IllegalValueException(MESSAGE_INVALID_TASK_FILTER);
+        }
+    }
+    //@@author
+
     //@@author iNekox3
+    /**
+     * Parses {@code type} into a {@code String[]} and returns it. Leading and trailing whitespaces will be
+     * trimmed.
+     * @throws IllegalValueException if the specified type is invalid, that is:
+     * i. type is not of string "profile", "task", or "exercise".
+     * ii. type is of "exercise" and comes with an index specified
+     *     in which the index does not fall between the accepted range.
+     */
+    public static String[] parseTabType(String type) throws IllegalValueException {
+        String trimmedType = type.trim();
+        String[] trimmedTypeArray = trimmedType.split(" ");
+        if (!trimmedTypeArray[0].equals("profile")
+                && !trimmedTypeArray[0].equals("task")
+                && !trimmedTypeArray[0].equals("exercise")
+                && !trimmedTypeArray[0].equals("issues")) {
+            throw new IllegalValueException(MESSAGE_INVALID_TAB_TYPE);
+        }
+
+        if (trimmedTypeArray.length > 1
+                && trimmedTypeArray[0].equals("exercise")
+                && !StringUtil.isWithinRange(trimmedTypeArray[1])) {
+            throw new IllegalValueException(MESSAGE_INVALID_WEEK_NUMBER);
+        }
+
+        return trimmedTypeArray;
+    }
+
+    //@@author Livian1107
     /**
      * Parses {@code type} into a {@code String} and returns it. Leading and trailing whitespaces will be
      * trimmed.
-     * @throws IllegalValueException if the specified type is invalid (not of string "profile", "task", or "exercise").
+     * @throws IllegalValueException if the specified theme is invalid (not of string "day" or "night").
      */
-    public static String parseTabType(String type) throws IllegalValueException {
-        String trimmedType = type.trim();
-        if (!trimmedType.equals("profile") && !trimmedType.equals("task") && !trimmedType.equals("exercise")) {
+    public static String parseTheme(String theme) throws IllegalValueException {
+        String trimmedType = theme.trim();
+        if (!trimmedType.equals("day") && !trimmedType.equals("night")) {
             throw new IllegalValueException(MESSAGE_INVALID_TAB_TYPE);
         }
         return trimmedType;
@@ -138,9 +200,6 @@ public class ParserUtil {
     public static Title parseTitle(String title) throws IllegalValueException {
         requireNonNull(title);
         String trimmedTitle = title.trim();
-        if (!Title.isValidTitle(trimmedTitle)) {
-            throw new IllegalValueException(Title.MESSAGE_TITLE_CONSTRAINTS);
-        }
         return new Title(trimmedTitle);
     }
 
@@ -210,9 +269,6 @@ public class ParserUtil {
     public static Milestone parseMilestone(String milestone) throws IllegalValueException {
         requireNonNull(milestone);
         String trimmedMilestone = milestone.trim();
-        if (!Milestone.isValidMilestone(trimmedMilestone)) {
-            throw new IllegalValueException(Milestone.MESSAGE_MILESTONE_CONSTRAINTS);
-        }
         return new Milestone(trimmedMilestone);
     }
 
@@ -470,6 +526,7 @@ public class ParserUtil {
         return new QuestionIndex(trimmedQuestionIndex);
     }
 
+    //@@author iNekox3
     /**
      * Parses a {@code String studentAnswer} into a {@code StudentAnswer}.
      * Leading and trailing whitespaces will be trimmed.
