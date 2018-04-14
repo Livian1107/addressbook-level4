@@ -160,6 +160,10 @@ public class ProfilePanel extends UiPart<Region>  {
         }
     }
 
+    public String getName() {
+        return String.valueOf(this.person.getName());
+    }
+
     @Subscribe
     private void handlePersonPanelSelectionChangeEvent(PersonPanelSelectionChangedEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
