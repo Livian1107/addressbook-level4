@@ -39,6 +39,14 @@ public class GuiTestAssert {
         }
     }
 
+    /**
+     * Asserts that the list in {@code personListPanelHandle} displays the details of {@code persons} correctly and
+     * in the correct order.
+     */
+    public static void assertListMatching(PersonListPanelHandle personListPanelHandle, List<Person> persons) {
+        assertListMatching(personListPanelHandle, persons.toArray(new Person[0]));
+    }
+
     //@@author Livian1107
     /**
      * Asserts that {@code actualProfile} displays the details of {@code expectedPerson}.
@@ -47,14 +55,6 @@ public class GuiTestAssert {
         assertEquals(expectedPerson.getName().fullName, actualProfile.getName());
     }
     //@@author
-
-    /**
-     * Asserts that the list in {@code personListPanelHandle} displays the details of {@code persons} correctly and
-     * in the correct order.
-     */
-    public static void assertListMatching(PersonListPanelHandle personListPanelHandle, List<Person> persons) {
-        assertListMatching(personListPanelHandle, persons.toArray(new Person[0]));
-    }
 
     /**
      * Asserts the size of the list in {@code personListPanelHandle} equals to {@code size}.
