@@ -24,7 +24,6 @@ import guitests.guihandles.CommandBoxHandle;
 import guitests.guihandles.MainMenuHandle;
 import guitests.guihandles.MainWindowHandle;
 import guitests.guihandles.PersonListPanelHandle;
-import guitests.guihandles.ProfilePanelHandle;
 import guitests.guihandles.ResultDisplayHandle;
 import guitests.guihandles.StatusBarFooterHandle;
 import seedu.progresschecker.MainApp;
@@ -97,10 +96,6 @@ public abstract class ProgressCheckerSystemTest {
 
     public CommandBoxHandle getCommandBox() {
         return mainWindowHandle.getCommandBox();
-    }
-
-    public ProfilePanelHandle getProfilePanel() {
-        return mainWindowHandle.getProfilePanel();
     }
 
     public PersonListPanelHandle getPersonListPanel() {
@@ -194,40 +189,6 @@ public abstract class ProgressCheckerSystemTest {
         statusBarFooterHandle.rememberSaveLocation();
         statusBarFooterHandle.rememberSyncStatus();
         getPersonListPanel().rememberSelectedPersonCard();
-    }
-
-    /**
-     * Asserts that the previously selected card is now deselected and the profile panel's info
-     * remains displaying the details of the previously selected person.
-     * @see ProfilePanelHandle#isNameChanged()
-     */
-    protected void assertSelectedCardDeselected() {
-        assertFalse(getProfilePanel().isNameChanged());
-        assertFalse(getPersonListPanel().isAnyCardSelected());
-    }
-
-    /**
-     * Asserts that the profile's username is changed to display the details of the person in the person list panel at
-     * {@code expectedSelectedCardIndex}, and only the card at {@code expectedSelectedCardIndex} is selected.
-     * @see ProfilePanelHandle#isNameChanged()
-     * @see PersonListPanelHandle#isSelectedPersonCardChanged()
-     */
-    protected void assertSelectedCardChanged(Index expectedSelectedCardIndex) {
-        String selectedCardName = getPersonListPanel().getHandleToSelectedCard().getName();
-        String expectedName = getPersonListPanel().getHandleToSelectedCard().getName();
-        assertEquals(expectedName, getProfilePanel().getLoadedName());
-
-        assertEquals(expectedSelectedCardIndex.getZeroBased(), getPersonListPanel().getSelectedCardIndex());
-    }
-
-    /**
-     * Asserts that the profile's name and the selected card in the person list panel remain unchanged.
-     * @see ProfilePanelHandle#isNameChanged()
-     * @see PersonListPanelHandle#isSelectedPersonCardChanged()
-     */
-    protected void assertSelectedCardUnchanged() {
-        assertFalse(getProfilePanel().isNameChanged());
-        assertFalse(getPersonListPanel().isSelectedPersonCardChanged());
     }
 
     /**

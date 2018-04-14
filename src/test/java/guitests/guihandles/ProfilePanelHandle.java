@@ -13,7 +13,6 @@ import javafx.scene.layout.Region;
  */
 public class ProfilePanelHandle extends NodeHandle<Node> {
 
-    public static final String PROFILE_PANEL_ID = "#profilePanel";
     private static final String NAME_FIELD_ID = "#name";
     private static final String MAJOR_FIELD_ID = "#major";
     private static final String YEAR_FIELD_ID = "#year";
@@ -83,27 +82,5 @@ public class ProfilePanelHandle extends NodeHandle<Node> {
 
     public List<Label> getTagLabels() {
         return tagLabels;
-    }
-
-    /**
-     * Returns the {@code String}name of the currently loaded page.
-     */
-    public String getLoadedName() {
-        return this.getName();
-    }
-
-    /**
-     * Remembers the {@code String}name of the currently loaded page.
-     */
-    public void rememberName() {
-        lastRememberedName = getLoadedName();
-    }
-
-    /**
-     * Returns true if the current {@code String}name is different from the value remembered by the most recent
-     * {@code rememberUsername()} call.
-     */
-    public boolean isNameChanged() {
-        return !lastRememberedName.equals(this.getName());
     }
 }
