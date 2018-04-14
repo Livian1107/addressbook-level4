@@ -74,6 +74,7 @@ public class ProfilePanel extends UiPart<Region>  {
         int index = getValueOfString(tagName) % TAG_COLORS.length;
         return TAG_COLORS[index];
     }
+    //@@author
 
     /**
      * Adds each letter of given string into an integer.
@@ -107,7 +108,7 @@ public class ProfilePanel extends UiPart<Region>  {
     /**
      * Loads the info of the selected person
      */
-    private void loadPerson(Person person) {
+    public void loadPerson(Person person) {
         this.person = person;
         tags.getChildren().clear();
         name.setText(person.getName().fullName);
@@ -122,6 +123,8 @@ public class ProfilePanel extends UiPart<Region>  {
             label.getStyleClass().add(getTagColor(tag.tagName));
             tags.getChildren().add(label);
         });
+        //@@author
+
         //@@author Livian1107
         loadPhoto();
 
@@ -157,9 +160,13 @@ public class ProfilePanel extends UiPart<Region>  {
         }
     }
 
+    public String getName() {
+        return String.valueOf(this.person.getName());
+    }
+
     @Subscribe
     private void handlePersonPanelSelectionChangeEvent(PersonPanelSelectionChangedEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
-        loadPerson(event.getNewSelection().person);
+        this.loadPerson(event.getNewSelection().person);
     }
 }

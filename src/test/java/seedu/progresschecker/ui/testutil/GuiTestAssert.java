@@ -6,6 +6,7 @@ import java.util.List;
 
 import guitests.guihandles.PersonCardHandle;
 import guitests.guihandles.PersonListPanelHandle;
+import guitests.guihandles.ProfilePanelHandle;
 import guitests.guihandles.ResultDisplayHandle;
 import seedu.progresschecker.model.person.Person;
 
@@ -37,6 +38,15 @@ public class GuiTestAssert {
             assertCardDisplaysPerson(persons[i], personListPanelHandle.getPersonCardHandle(i));
         }
     }
+
+    //@@author Livian1107
+    /**
+     * Asserts that {@code actualProfile} displays the details of {@code expectedPerson}.
+     */
+    public static void assertProfileDisplaysPerson(Person expectedPerson, ProfilePanelHandle actualProfile) {
+        assertEquals(expectedPerson.getName().fullName, actualProfile.getName());
+    }
+    //@@author
 
     /**
      * Asserts that the list in {@code personListPanelHandle} displays the details of {@code persons} correctly and
