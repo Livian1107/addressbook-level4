@@ -18,7 +18,7 @@
    <children>
       <ImageView fx:id="profileBackground" fitHeight="500.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/profile_background.png" />
+            <Image url="@../images/profile_background0008.png" />
          </image>
       </ImageView>
       <Ellipse fx:id="profile" centerX="300.0" centerY="100.0" fill="WHITE" layoutX="200.0" radiusX="100.0" radiusY="80.0" stroke="BLACK" strokeType="INSIDE" />
