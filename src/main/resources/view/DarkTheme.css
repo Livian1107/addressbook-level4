@@ -468,3 +468,7 @@
 .exercise .suggested-answer {
     -fx-text-fill: #0099C7;
 }
+
+.profile .label {
+    -fx-text-fill: white;
+}
