@@ -19,7 +19,6 @@ By: `Team T09-B3`      Since: `Feb 2018`      Licence: `MIT`
 
 == Introduction
 === About the App
-
 ProgressChecker is for *students* who *prefer to use a desktop app* to keep track of their learning progress throughout the certain module. (Current version is available for CS2103/T) +
 
 For the current version, you can add your teammates details into ProgressChecker. You can also create a new task list through google task. By default, app will display all the link:DeveloperGuide.adoc#Learning-Outcomes[Learning Outcomes] for this week in the task list. Students can use this task list to track their weekly homework and the progress of the project.
@@ -39,7 +38,6 @@ This lightbulb icon means tips that you can try when using ProgressChecker.
 This info icon means notes that you should pay attention to when using ProgressChecker.
 
 == Quick Start
-
 Getting started with ProgressChecker is as easy as downloading and launching the software in a couple of clicks! Listed below are the important *steps* that you will need to follow to get started:
 
 .  Please ensure that you have Java version `1.8.0_60` or later installed in your Computer.
@@ -66,13 +64,11 @@ Now, you are ready to start to explore ProgressChecker!
 
 [[Features]]
 == Features
-
 ProgressChecker is filled with lots of functionalities that are easy to use. If you're new to using CLI, our next section will give you a quick start to end process of using CLI with ProgressChecker.
 
 The section below specifies all the commands in details with examples to help you be more familiar how to use our app and let you make the best out of ProgressChecker.
 
 === Using CLI with ProgressChecker
-
 Now you come to use the ProgressChecker. You can type the command in the command box and press kbd:[Enter] to execute it. Here are the features that you can try:
 
 [TIP]
@@ -114,9 +110,7 @@ Refer to <<General,below>> for details of each command.
 ====
 
 === General
-
 ==== Helping user with User Guide : `help` OR `h`
-
 You may want to refer to the User Guide when you have a question. You can read it in a separate window. +
 *Format:* `help` OR `h`
 
@@ -127,7 +121,6 @@ You may want to refer to the User Guide when you have a question. You can read i
 
 // tag::view[]
 ==== Viewing a different tab : `view` OR `v`
-
 You can change the tab view to show either `Profile`, `Task`, or `Exercise`. +
 *Format:* `view TYPE` OR `v TYPE`
 
@@ -150,7 +143,6 @@ By default, the exercise tab shows exercises from the latest available school we
 
 // tag::theme[]
 ==== Toggling theme : `theme` OR `t`
-
 You can change the style of the app between a light and dark theme according to your preference. +
 *Format:* `theme` OR `t`
 
@@ -162,7 +154,6 @@ You can change the style of the app between a light and dark theme according to 
 
 // tag::undoredo[]
 ==== Undoing previous command : `undo` OR `u`
-
 You may type some commands wrongly, or some unexpected changes happen. You can restore the ProgressChecker to the state before the previous _undoable_ command is executed. +
 *Format:* `undo` OR `u`
 
@@ -189,7 +180,6 @@ The `undo` command fails as there are no undoable commands executed previously.
 `u` (reverses the `delete 1` command)
 
 ==== Redoing the previously undone command : `redo` OR `r`
-
 You can reverse the most recent `undo` command if you want to go back to the previous state. +
 *Format:* `redo` OR `r`
 
@@ -212,7 +202,6 @@ The `redo` command fails as there are no `undo` commands executed previously.
 // end::undoredo[]
 
 ==== History viewing the list of entered commands : `history`
-
 You can retrace all the commands that you have entered in reverse chronological order. +
 *Format:* `history`
 
@@ -224,7 +213,6 @@ You can press the kbd:[&uarr;] and kbd:[&darr;] arrows. The previous and next in
 * `history`
 
 ==== Refreshing the content : `refresh` OR `rf` `[coming in v2.0]`
-
 You can refresh the program to update it to the latest content. +
 *Format:* `refresh`
 
@@ -244,7 +232,6 @@ You can clear all information and data inside the ProgressChecker if you want to
 * `c`
 
 ==== Exiting the program : `exit` OR `e`
-
 You can exits the program when you are done with the work. +
 *Format:* `exit` OR `e`
 
@@ -254,10 +241,8 @@ You can exits the program when you are done with the work. +
 * `e`
 
 === Exercise
-
 // tag::answer[]
 ==== Answering an exercise : `answer` `[since v1.4r]`
-
 You can answer an exercise based on the question index. Your answer will be saved automatically upon answering. +
 *Format:* `answer INDEX ANSWER`
 
@@ -279,10 +264,8 @@ An exercise's `SECTION_NUMBER` is directly adopted from https://nus-cs2103-ay171
 // end::answer[]
 
 === Issue Tracker
-
 //tag::issues[]
 ==== Github logging in: `gitlogin` OR `gl`
-
 You can login with your Github account and prepare to work with the issues in your team repo. +
 *Format:* `gitlogin gu/USERNAME pc/PASSWORD r/REPO` +
 OR +
@@ -297,7 +280,6 @@ You need to login and mention the repo where you need to create/edit issues.
 * `gitlogin gu/johndoe pc/dummy123 r/CS2103T/main`
 
 ==== Creating an issue on Github: `+issue` OR `ci`
-
 You can create a new issue in the team repo. Other than write the description and title, you can also set assignees, milestone and labels to it. +
 *Format:* `+issue ti/TITLE [a/ASSIGNEES]... [ms/MILESTONE] [b/BODY] [l/LABELS]...` +
 OR +
@@ -314,7 +296,6 @@ An issue can have more than one assignees and labels.
 * `ci ti/Issue with only body b/test body l/type.test`
 
 ==== Closing an issue on Github: `-issue` OR `cli`
-
 You can close the certain issue on github when you have resolved it. +
 *Format:* `-issue INDEX` OR `cli INDEX`
 
@@ -327,7 +308,6 @@ You can close the certain issue on github when you have resolved it. +
 * `cli 3`
 
 ==== Reopening an issue on Github: `reopenissue` OR `ri`
-
 You can reopen the certain issue on github when you want to work on it. +
 *Format:* `reopenissue INDEX` OR `ri INDEX`
 
@@ -340,7 +320,6 @@ You can reopen the certain issue on github when you want to work on it. +
 * `reopenissue 3`
 
 ==== Loggin out of Github: `gitlogout` OR `glo`
-
 You can logout of github after logging in. +
 
 [TIP]
@@ -355,9 +334,7 @@ You will get an error message if you try to logout before logging in.
 
 // tag::tasks[]
 === Task List
-
 ==== New TODO list by dafault: `newtasklist` OR `nl`
-
 You can add the default TODO list to the ProgressChecker and your Google Tasks to prepare for your new week work. +
 *Format:* `newtasklist` OR `nl`
 
@@ -371,7 +348,6 @@ otherwise the application will hang.
 * `nl`
 
 ==== Viewing the default TODO list: `viewtask` OR `vt`
-
 You can view the current default TODO list in the browser panel in ProgressChecker. +
 *Format:* `viewtask` OR `vt`
 
@@ -385,7 +361,6 @@ otherwise the application will hang.
 * `cli 3`
 
 ==== Completing a task: `complete` OR `ct`
-
 You can mark the task as completed when you finish it. +
 *Format:* `complete INDEX` OR `ct INDEX`
 
@@ -407,7 +382,6 @@ otherwise the application will hang.
 * `ct 3`
 
 ==== Resetting a task as incompleted: `reset` OR `rt`
-
 You can reset a task as incompleted when you want to work on it. +
 *Format:* `reset INDEX` OR `rt INDEX`
 
@@ -431,9 +405,7 @@ An issue can have more than one assignees and labels.
 // end::tasks[]
 
 === Teammate
-
 ==== Adding a teammate: `add` OR `a`
-
 You can add the contact information of a new teammate to the ProgressChecker. +
 *Format:* `add n/NAME p/PHONE_NUMBER e/EMAIL g/GITHUB_USERNAME m/MAJOR y/YEAR [t/TAG]...` +
 OR +
@@ -450,7 +422,6 @@ A teammate can have any number of tags (including 0)
 * `a n/Betsy Crowe t/friend e/betsycrowe@example.com g/betsycroweGithub m/Information Security y/2 p/1234567 t/criminal`
 
 ==== Editing a teammate : `edit` OR `ed`
-
 You can edit the information of the certain existing teammate in the ProgressChecker. +
 *Format:* `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [g/GITHUB_USERNAME] [m/MAJOR] [y/YEAR] [t/TAG]...` +
 OR +
@@ -475,7 +446,6 @@ Edits the name of the 2nd teammate to be `Betsy Crower` and clears all existing 
 
 // tag::upload[]
 ==== Uplpoading profile photo
-
 You can upload a image from your local PC as a profile photo for yourself or your teammates in ProgressChecker. +
 *Format* `upload INDEX PATH` OR `up INDEX PATH`
 
@@ -494,7 +464,6 @@ Uploads the image with local path _'C:\Users\User\profilePhoto.png'_ as the prof
 // end::upload[]
 
 ==== Listing all teammates : `list` OR `l`
-
 You can view the list of all your teammates in the ProgressChecker. +
 *Format:* `list` OR `l`
 
@@ -505,7 +474,6 @@ You can view the list of all your teammates in the ProgressChecker. +
 
 // tag::upload[]
 ==== Uplpoading profile photo
-
 You can upload a image from your local PC as a profile photo for yourself or your teammates in ProgressChecker. +
 *Format* `upload INDEX PATH` OR `up INDEX PATH`
 
@@ -525,7 +493,6 @@ Uploads the image with local path _'C:\Users\User\profilePhoto.png'_ as the prof
 
 // tag::sort[]
 ==== Sorting all teammates : `sort`
-
 You can view the list of all your teammates in the ProgressChecker with their names in alphabetical order. +
 *Format:* `sort`
 
@@ -534,10 +501,7 @@ You can view the list of all your teammates in the ProgressChecker with their na
 * `sort`
 // end::sort[]
 
-// end::sort[]
-
 ==== Finding/Searching teammates by the keywords of name: `find` OR `search`
-
 You can find the certain teammates with their names contain any of the given keywords. +
 *Format:* `find KEYWORD [MORE_KEYWORDS] OR search KEYWORD [MORE_KEYWORDS]`
 
@@ -582,7 +546,6 @@ Selects the 2nd teammate in the ProgressChecker.
 Selects the 1st teammate in the results of the `find` command.
 
 ==== Deleting a teammate : `delete` OR `d`
-
 You can remove the specified teammate from the ProgressChecker. +
 *Format:* `delete INDEX` OR `d INDEX`
 
@@ -604,12 +567,10 @@ Deletes the 2nd teammate in the ProgressChecker.
 Deletes the 1st teammate in the results of the `find` command.
 
 === Saving the data
-
 Progress Checker data are saved in the hard disk automatically after any command that changes the data. +
 There is no need to save manually.
 
 == FAQ
-
 You may encounter some questions related to other aspects of ProgressChecker other than the commands. This section list some frequently asked questions that you may find useful.
 
 *Q*: How do I transfer my data to another Computer? +
@@ -625,7 +586,6 @@ You may encounter some questions related to other aspects of ProgressChecker oth
 *A*: Either click the 'x' button on the screen or type command `exit`.
 
 == Command Summary
-
 If you're looking for a quick reference list of commands without all the details, the section below summarises all the available commands.
 
 |===
