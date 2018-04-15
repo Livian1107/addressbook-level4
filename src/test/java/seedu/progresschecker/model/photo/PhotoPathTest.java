@@ -34,7 +34,7 @@ public class PhotoPathTest {
         assertFalse(PhotoPath.isValidPhotoPath("src/main/resources/images/contact/image.gif"));
 
         // valid photo path
-        assertTrue(PhotoPath.isValidPhotoPath("image.jpg"));
+        assertTrue(PhotoPath.isValidPhotoPath("src/main/resources/images/contact/image.jpg"));
         assertTrue(PhotoPath.isValidPhotoPath("src/main/resources/images/contact/image.jpeg"));
         assertTrue(PhotoPath.isValidPhotoPath("src/main/resources/images/contact/image.png"));
         assertTrue(PhotoPath.isValidPhotoPath("")); // empty path
