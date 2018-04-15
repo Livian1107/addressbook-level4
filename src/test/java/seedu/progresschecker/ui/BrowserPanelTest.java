@@ -1,6 +1,8 @@
 package seedu.progresschecker.ui;
 
+import static guitests.guihandles.WebViewUtil.waitUntilBrowserLoaded;
 import static org.junit.Assert.assertEquals;
+import static seedu.progresschecker.testutil.EventsUtil.postNow;
 import static seedu.progresschecker.testutil.TypicalPersons.ALICE;
 import static seedu.progresschecker.ui.BrowserPanel.DEFAULT_PAGE;
 import static seedu.progresschecker.ui.UiPart.FXML_FILE_FOLDER;
@@ -55,5 +57,15 @@ public class BrowserPanelTest extends GuiUnitTest {
         // default web page
         URL expectedDefaultPageUrl = MainApp.class.getResource(FXML_FILE_FOLDER + DEFAULT_PAGE);
         assertEquals(expectedDefaultPageUrl, browserPanelHandle.getLoadedUrl());
+
+        // associated web page of a person
+        postNow(loadTaskEventStub);
+        String expectedTitle = null;
+
+        waitUntilBrowserLoaded(browserPanelHandle);
+        assertEquals(expectedTitle, browserPanelHandle.getLoadedTitle());
+
+        postNow(loadUrlEventStub);
+        URL expectedUrl = MainApp.class.getResource(FXML_FILE_FOLDER + DEFAULT_PAGE);;
     }
 }

@@ -74,7 +74,6 @@ public class ProfilePanel extends UiPart<Region>  {
         int index = getValueOfString(tagName) % TAG_COLORS.length;
         return TAG_COLORS[index];
     }
-    //@@author
 
     /**
      * Adds each letter of given string into an integer.
@@ -86,6 +85,7 @@ public class ProfilePanel extends UiPart<Region>  {
         }
         return sum;
     }
+    //@@author
 
     //@@author Livian1107
     /**
@@ -158,10 +158,6 @@ public class ProfilePanel extends UiPart<Region>  {
                     MainApp.class.getResourceAsStream(person.getDefaultPath()));
             profile.setFill(new ImagePattern(profilePhoto));
         }
-    }
-
-    public String getName() {
-        return String.valueOf(this.person.getName());
     }
 
     @Subscribe
