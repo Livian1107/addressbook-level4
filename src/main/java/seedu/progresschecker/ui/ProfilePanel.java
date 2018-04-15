@@ -86,6 +86,7 @@ public class ProfilePanel extends UiPart<Region>  {
         }
         return sum;
     }
+    //@@author
 
     //@@author Livian1107
     /**

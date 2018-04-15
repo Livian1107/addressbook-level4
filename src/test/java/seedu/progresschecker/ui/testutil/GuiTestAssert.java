@@ -56,6 +56,15 @@ public class GuiTestAssert {
         assertListMatching(personListPanelHandle, persons.toArray(new Person[0]));
     }
 
+    //@@author Livian1107
+    /**
+     * Asserts that {@code actualProfile} displays the details of {@code expectedPerson}.
+     */
+    public static void assertProfileDisplaysPerson(Person expectedPerson, ProfilePanelHandle actualProfile) {
+        assertEquals(expectedPerson.getName().fullName, actualProfile.getName());
+    }
+    //@@author
+
     /**
      * Asserts the size of the list in {@code personListPanelHandle} equals to {@code size}.
      */

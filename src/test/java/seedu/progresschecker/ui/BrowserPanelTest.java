@@ -55,5 +55,18 @@ public class BrowserPanelTest extends GuiUnitTest {
         // default web page
         URL expectedDefaultPageUrl = MainApp.class.getResource(FXML_FILE_FOLDER + DEFAULT_PAGE);
         assertEquals(expectedDefaultPageUrl, browserPanelHandle.getLoadedUrl());
+<<<<<<< HEAD
+=======
+
+        // associated web page of a person
+        postNow(loadTaskEventStub);
+        String expectedTitle = null;
+
+        waitUntilBrowserLoaded(browserPanelHandle);
+        assertEquals(expectedTitle, browserPanelHandle.getLoadedTitle());
+
+        postNow(loadUrlEventStub);
+        URL expectedUrl = MainApp.class.getResource(FXML_FILE_FOLDER + DEFAULT_PAGE);;
+>>>>>>> e229fba1aaa95f0370df5bded652e7d3001bf6cb
     }
 }
